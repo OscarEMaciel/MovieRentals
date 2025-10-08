@@ -4,29 +4,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class User
+    internal class Category
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //va a ser numerico y unico
-        public int Id { get; set; }
-        [Required]
-        public required string Name { get; set; }
-        [Required]
-        [EmailAddress]
-        public required string Email { get; set; }
-        public UserRole Role { get; set; }
-        [Required]
-        public required string Password { get; set; }
-        public bool IsDeleted { get; set; } = false;
-    }
 
-    public enum UserRole
-    {
-        Client,
-        Admin
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public required string Name { get; set; }
+        public bool IsDeleted { get; set; } = false;
+
+        [JsonIgnore]
+        public ICollection<Movie> Movie { get; set; } = new List<Movie>(); //relacion con las pelis
     }
+        
 }
