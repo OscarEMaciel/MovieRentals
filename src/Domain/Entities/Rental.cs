@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    internal class Rental
+    public class Rental
     {
 
         [Key]

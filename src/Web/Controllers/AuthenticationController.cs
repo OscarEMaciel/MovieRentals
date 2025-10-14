@@ -1,5 +1,4 @@
 ﻿using Aplication.Models;
-using Aplication.Requests;
 using Aplication.Services;
 using System.Security.Claims;
 using System.Text;
@@ -7,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Aplication.Models.Requests;
 
 namespace Web.Controllers
 {

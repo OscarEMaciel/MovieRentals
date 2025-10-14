@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    internal class Category
+    public class Category
     {
 
         [Key]

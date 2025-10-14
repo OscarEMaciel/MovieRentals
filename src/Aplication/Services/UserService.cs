@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aplication.Models;
-using Aplication.Requests;
+using Aplication.Models.Requests;
 using Domain.Entities;
 using Domain.Interfaces;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aplication.Requests
+namespace Aplication.Models.Requests
 {
     public class CredentialsRequest
     {
