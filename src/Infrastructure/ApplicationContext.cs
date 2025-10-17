@@ -14,6 +14,8 @@ namespace Infrastructure
 
         public DbSet<Movie> Movies { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
+
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
     }
