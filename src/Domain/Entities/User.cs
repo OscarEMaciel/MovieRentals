@@ -26,7 +26,7 @@ namespace Domain.Entities
 
     public enum UserRole
     {
-        Client,
+        Cliente,
         Admin
     }
 }
