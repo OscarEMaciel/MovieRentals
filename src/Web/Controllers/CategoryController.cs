@@ -34,7 +34,8 @@ namespace Web.Controllers
                     Id = b.Id,
                     Title = b.Title,
                     Price = b.Price,
-                    Stock = b.Stock
+                    Stock = b.Stock,
+                    CategoryName = c.Name
                 }).ToList()
             });
 
@@ -57,7 +58,8 @@ namespace Web.Controllers
                     Id = b.Id,
                     Title = b.Title,
                     Price = b.Price,
-                    Stock = b.Stock
+                    Stock = b.Stock,
+                    CategoryName = category.Name
                 }).ToList()
             };
 
