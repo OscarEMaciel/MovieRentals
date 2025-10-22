@@ -30,6 +30,25 @@ namespace Infrastructure
                 .Property(d => d.Role)
                 .HasConversion(new EnumToStringConverter<UserRole>());
 
+            modelBuilder.Entity<Movie>()
+             .HasOne(b => b.Category)
+             .WithMany(c => c.Movie)
+             .HasForeignKey(b => b.CategoryId)
+             .OnDelete(DeleteBehavior.Restrict);
+
+            // relaciones rental -> movie / Cliente
+            modelBuilder.Entity<Rental>()
+                .HasOne(o => o.Movie)
+                .WithMany() // una peli puede estar en varios pedidos
+                .HasForeignKey(o => o.MovieId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Rental>()
+                .HasOne(o => o.Client)
+                .WithMany() // un cliente puede tener varios pedidos
+                .HasForeignKey(o => o.ClientId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(modelBuilder);
         }
     }
