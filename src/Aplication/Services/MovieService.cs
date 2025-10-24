@@ -29,7 +29,7 @@ namespace Aplication.Services
             return _movieRepository.GetById(id); // Tu repo ya hace Include(...)
         }
 
-        // Crear libro y devolver DTO consistente
+        // Crear pelicula y devolver DTO consistente
         public MovieDto? CreateMovie(CreateMovieRequest request)
         {
             var Movie = new Movie
@@ -43,7 +43,7 @@ namespace Aplication.Services
 
             _movieRepository.Add(Movie);
 
-            // Volver a cargar con relaciones (tu GetById ya incluye Author/Publisher/Category)
+            // Volver a cargar con relaciones (tu GetById ya incluye/Category)
             var createdMovie = _movieRepository.GetById(Movie.Id);
             if (createdMovie == null) return null;
 
