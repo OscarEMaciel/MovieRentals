@@ -44,6 +44,7 @@ namespace Aplication.Services
             _movieRepository.Add(Movie);
 
             // Volver a cargar con relaciones (tu GetById ya incluye/Category)
+
             var createdMovie = _movieRepository.GetById(Movie.Id);
             if (createdMovie == null) return null;
 
@@ -71,7 +72,9 @@ namespace Aplication.Services
             movie.CategoryId = request.CategoryId;
 
             _movieRepository.Update(movie);
+
             return true;
+
         }
 
         public bool Delete(int id)
@@ -82,6 +85,7 @@ namespace Aplication.Services
                 return false;
 
             _movieRepository.Delete(id); // baja lógica
+
             return true;
         }
     }

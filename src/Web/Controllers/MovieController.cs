@@ -87,7 +87,7 @@ namespace Web.Controllers
             return NoContent();
         }
 
-        // DELETE lógico: api/Movie/5
+        // DELETE lógico: api/Movie
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
         public IActionResult DeleteMovie(int id)
