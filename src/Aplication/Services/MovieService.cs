@@ -14,9 +14,9 @@ namespace Aplication.Services
     {
         private readonly IMovieRepository _movieRepository;
 
-        public MovieService(IMovieRepository bookRepository)
+        public MovieService(IMovieRepository movieRepository)
         {
-            _movieRepository = bookRepository;
+            _movieRepository = movieRepository;
         }
 
         public IEnumerable<Movie> GetAll(bool includeDeleted = false)

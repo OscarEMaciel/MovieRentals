@@ -47,7 +47,7 @@ namespace Web.Controllers
 
 
         [HttpPost]
-        [AllowAnonymous] // 👈 importante para registrarse
+        [AllowAnonymous] //  importante para registrarse
         public IActionResult Add([FromBody] UserForAddRequest body)
         {
             return Ok(_service.AddUser(body));
